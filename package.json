@@ -19,6 +19,10 @@
     "get link"
   ],
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepzwee/mediafire-getlink.git"
+  },
   "dependencies": {
     "axios": "^0.24.0",
     "jsdom": "^19.0.0"
