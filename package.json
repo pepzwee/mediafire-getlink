@@ -1,0 +1,30 @@
+{
+  "name": "mediafire-getlink",
+  "version": "1.0.0",
+  "description": "Fetch mediafire direct download link",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kristjan Kirpu <hello@pepzwee.com> (https://pepzwee.com)",
+  "contributors": [
+    {
+      "name": "azgar44",
+      "url": "https://github.com/azgar44"
+    }
+  ],
+  "keywords": [
+    "mediafire",
+    "bypasser",
+    "get link"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "jsdom": "^19.0.0"
+  },
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=12.0.0"
+  }
+}
