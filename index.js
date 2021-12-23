@@ -2,13 +2,30 @@ const jsdom = require('jsdom')
 const axios = require('axios')
 const { JSDOM } = jsdom
 
+// some mediafire links are instant downloads
+// and that will potentially crash our JSDOM parsing or make node run out of memory
+// so this function makes sure that the given link returns "text/html" content-type
+async function checkLinkResponseType(link) {
+  const { headers } = await axios.head(link)
+
+  // content type is something other than html
+  if (!headers?.['content-type']?.includes('text/html')) {
+    throw new Error(`Expected "text/html" but received "${headers['content-type']}"`)
+  }
+
+  return
+}
+
 async function getLink(link) {
   const validLink = new RegExp(/^(http|https):\/\/(?:www\.)?(mediafire)\.com\/[0-9a-z]+(\/.*)/gm)
 
   if (!link.match(validLink)) throw new Error('Unknown link')
 
   try {
-    let { data } = await axios.get(link)
+    // make sure we are going to be handling html before requesting data
+    await checkLinkResponseType(link)
+
+    const { data } = await axios.get(link)
 
     const dom = new JSDOM(data)
     const downloadButton = dom.window.document.querySelector('#downloadButton')

@@ -1,6 +1,6 @@
 {
   "name": "mediafire-getlink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fetch mediafire direct download link",
   "main": "index.js",
   "scripts": {
