@@ -10,10 +10,10 @@ async function checkLinkResponseType(link) {
 
   // content type is something other than html
   if (!headers?.['content-type']?.includes('text/html')) {
-    throw new Error(`Expected "text/html" but received "${headers['content-type']}"`)
+    return headers['content-type']
   }
 
-  return
+  return false
 }
 
 async function getLink(link) {
@@ -23,7 +23,11 @@ async function getLink(link) {
 
   try {
     // make sure we are going to be handling html before requesting data
-    await checkLinkResponseType(link)
+    const type = await checkLinkResponseType(link)
+
+    // TODO: return link based on content-type
+    // right now we just assume anything besides text/html is a direct dl link
+    if (type) return link
 
     const { data } = await axios.get(link)
 
