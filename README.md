@@ -1,6 +1,8 @@
 # mediafire-getlink
 
-Slightly fixed version of [mediafire-link](https://www.npmjs.com/package/mediafire-link) which has no Github repository anymore as far as I know.
+Fork of [mediafire-link](https://github.com/azgar44/mediafire-link) which I initially made because the author didn't have a Github repository linked nor was it handling instant download links (memleak).
+
+I am actively using this in some of my projects so any bug I find will be fixed here.
 
 ## Example
 
@@ -13,3 +15,4 @@ getLink('MEDIAFIRE LINK')
         //output: DOWNLOAD MEDIAFIRE LINK
     })
     .catch(console.error)
+```
