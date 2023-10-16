@@ -1,6 +1,6 @@
 {
   "name": "mediafire-getlink",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Fetch mediafire direct download link",
   "main": "index.js",
   "scripts": {
@@ -24,11 +24,14 @@
     "url": "https://github.com/pepzwee/mediafire-getlink.git"
   },
   "dependencies": {
-    "axios": "^0.24.0",
-    "jsdom": "^19.0.0"
+    "axios": "^1.5.1",
+    "jsdom": "^22.1.0"
   },
   "engines": {
-    "npm": ">=6.14.4",
-    "node": ">=14.0.0"
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
+  "volta": {
+    "node": "16.20.2"
   }
 }
